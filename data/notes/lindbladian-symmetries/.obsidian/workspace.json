@@ -1,0 +1,163 @@
+{
+  "main": {
+    "id": "1b0081162e6928b1",
+    "type": "split",
+    "children": [
+      {
+        "id": "0f85e476d3dfea25",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "675c344fd2592fc4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Identifying symmetries in the Delta-Kerr-cat Lindbladian.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "eb46cdf4a6091412",
+    "type": "split",
+    "children": [
+      {
+        "id": "135d812956fc1782",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c911ad35b2c7d956",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "9bd5c215baa3ef86",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "abbe999d91a10f2d",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "05c97de0f450f86d",
+    "type": "split",
+    "children": [
+      {
+        "id": "5391f7178a9c0d77",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6a57aa45ec0736ec",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Identifying symmetries in the Delta-Kerr-cat Lindbladian.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "fa47c5a500b3c2b7",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Identifying symmetries in the Delta-Kerr-cat Lindbladian.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "9a0f3827788e492a",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "e0cd4391d635df64",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Identifying symmetries in the Delta-Kerr-cat Lindbladian.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "675c344fd2592fc4",
+  "lastOpenFiles": [
+    "Pasted image 20230413205004.png",
+    "figures/spectrum_delta0.png",
+    "figures/spectrum_delta2.pdf",
+    "figures/spectrum_delta2.png",
+    "figures",
+    "Users/jaya/My.md",
+    "Identifying symmetries in the Delta-Kerr-cat Lindbladian.md",
+    "Users/jaya",
+    "Users",
+    "images/figure1.png.md",
+    "images"
+  ]
+}
