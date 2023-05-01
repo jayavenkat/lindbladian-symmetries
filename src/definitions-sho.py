@@ -1,6 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
+Created on Thu Apr 20 11:21:55 2023
+
+@author: jaya
+"""
+
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
 Created on Tue Apr 11 16:58:40 2023
 
 @author: jaya
@@ -33,11 +41,10 @@ def set_plot_settings(pres_type):
         s = 16
     elif pres_type == 'paper':
         s = 10
-    mpl.rc['font',"text.usetex"] = True
     mpl.rc('font',family='sans-serif')
     mpl.rc('font',size=s)
     mpl.rc('font',size=s)
-    mpl.rcParams['font.family'] = 'Helvetica'
+    mpl.rcParams['font.family'] = 'CMU Sans Serif'
     mpl.rcParams['axes.formatter.useoffset'] = False
     mpl.rcParams['ytick.right'] = False
     mpl.rcParams['xtick.top'] = False
@@ -57,21 +64,20 @@ def set_plot_settings(pres_type):
     mpl.rcParams['lines.markersize'] = 4.0
 
 # Construct the Hamiltonian of the Delta-Kerr-cat
-def get_hamiltonian(n_fock=100, detuning=0, kerr=1, squeezing=2):
+def get_hamiltonian(n_fock=100, frequency=0):
     a = qt.destroy(n_fock)
     a_dag = a.dag()
-    H = detuning * a_dag * a - kerr * (a_dag * a_dag * a * a ) \
-        + squeezing * a_dag * a_dag + np.conjugate(squeezing) * a * a
+    H = frequency * a_dag * a
     return H
 
-# Calculate the energy splittings of the system
-def get_splittings(n_fock=100, detuning=0, kerr=1, squeezing=2, n_splitting=3):
-    H = get_hamiltonian(n_fock, detuning, kerr, squeezing)
-    splittings = []
-    h_eigs = -H.eigenenergies()[::-1]
-    for i in range(2, 2 * (n_splitting + 1), 2):
-        splittings.append(h_eigs[i + 1] - h_eigs[i])
-    return np.array(splittings)
+# # Calculate the energy splittings of the system
+# def get_splittings(n_fock=100, frequency=0, n_splitting=3):
+#     H = get_hamiltonian(n_fock, frequency)
+#     splittings = []
+#     h_eigs = H.eigenenergies()[::-1]
+#     for i in range(2, 2 * (n_splitting + 1), 2):
+#         splittings.append(h_eigs[i + 1] - h_eigs[i])
+#     return np.array(splittings)
 
 # Create collapse operators for the system
 def get_c_ops(n_fock=100, kappa_loss=1e-2, kappa_gain=1e-4):
@@ -81,20 +87,20 @@ def get_c_ops(n_fock=100, kappa_loss=1e-2, kappa_gain=1e-4):
     return c_ops
 
 # Construct the Lindbladian of the system
-def get_lindbladian(n_fock=100, detuning=0, kerr=1, squeezing=2, kappa_loss=1e-2, kappa_gain=1e-4):
+def get_lindbladian(n_fock=100,frequency=0, kappa_loss=1e-2, kappa_gain=1e-4):
     a = qt.destroy(n_fock)
     a_dag = a.dag()
-    H = get_hamiltonian(n_fock, detuning, kerr, squeezing)
+    H = get_hamiltonian(n_fock, frequency)
     c_ops = get_c_ops(n_fock, kappa_loss, kappa_gain)
     lindbladian = qt.liouvillian(H, c_ops)
     return lindbladian
 
 # Obtain sorted eigenstates of the system according to energy and parity
-def get_sorted_eigenstates(n_fock=100, detuning=0, kerr=1, squeezing=2):
+def get_sorted_eigenstates(n_fock=100, frequency=0):
     if n_fock % 2 == 1:
         raise ValueError('n_fock cannot be odd.')
 
-    minus_H = -get_hamiltonian(n_fock, detuning, kerr, squeezing)
+    minus_H = -get_hamiltonian(n_fock, frequency)
     minus_parity_op = -(1j * np.pi * qt.num(n_fock)).expm()
 
     eigenvalues, eigenstates = qt.simdiag([minus_parity_op, minus_H], evals=True)

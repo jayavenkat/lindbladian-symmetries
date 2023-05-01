@@ -12,7 +12,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 import qutip as qt
-from matplotlib import cm
 
 # Set the figure size in inches
 def set_figure_size(width, height, ax=None):
@@ -33,11 +32,10 @@ def set_plot_settings(pres_type):
         s = 16
     elif pres_type == 'paper':
         s = 10
-    mpl.rc['font',"text.usetex"] = True
     mpl.rc('font',family='sans-serif')
     mpl.rc('font',size=s)
     mpl.rc('font',size=s)
-    mpl.rcParams['font.family'] = 'Helvetica'
+    mpl.rcParams['font.family'] = 'CMU Sans Serif'
     mpl.rcParams['axes.formatter.useoffset'] = False
     mpl.rcParams['ytick.right'] = False
     mpl.rcParams['xtick.top'] = False
